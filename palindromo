@@ -1,1 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
+int main(void) {
+	int num, num1, num2, c, s;
+	
+	printf("Digite um numero \n");
+	scanf("%d", &num);
+	
+	num1 = num;
+	s = 0;
+	c = 0;
+	while(num1 >= 1)
+	{
+		num1 = num1 /10;
+		c++;
+	}
+	c--;
+	num1 = num;
+	
+	while(c >= 0)
+	{
+		num2 = num1 % 10;
+		s = s + num2 * pow(10, c);
+		num1 = num1 / 10;
+		c--;
+	}
+	printf("%d \n", s);
+	
+	if(num == s)
+	{
+		printf("%d eh palindromo", num);
+	} else
+	{
+		printf("%d nao eh palindromo", num);
+	}	
+}
